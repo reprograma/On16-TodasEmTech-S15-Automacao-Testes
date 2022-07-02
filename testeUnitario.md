@@ -10,7 +10,16 @@ Durante a aula, nós vamos utilizar dois projetos:
 
 - O diretório projeto1 será para testes estáticos e unitários. Vamos criar alguns códigos, padronizar e fazer leitura de testes usando ESLint, e fazer testes manuais construindo um framework. 
 
-- O segundo projeto será para teste de API. Se observarem, é a mesma API Livraria que praticamos na aula de integração MongoDB. O objetivo é testar os endpoints que elaboramos. Aprenderemos como testar com as ferramentas Jest e Supertest.
+- O segundo projeto será para teste de API, nos guiaremos com o arquivo md ``testesAPI.md``. Se observarem, é a mesma API Livraria que praticamos na aula de integração MongoDB. O objetivo é testar os endpoints que elaboramos. Aprenderemos como testar com as ferramentas Jest e Supertest.
+
+----------------------------------------
+
+## ATIVIDADE PARA CASA
+
+A atividade para casa será reproduzir os testes na mesma API que você utilizou na atividade da aula Integração Banco de Dados.
+
+Você deverá seguir o passo a passo do teste de API, que está no arquivo ``testeAPI.md".
+
 
 ------------------------------------------------------------------------
 
