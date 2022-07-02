@@ -14,7 +14,7 @@ Durante a aula, nós vamos utilizar dois projetos:
 
 ------------------------------------------------------------------------
 
-## Testes Estáticos e Unitários - Diretório ``projeto1``
+## Testes Estáticos e Unitários - ``projeto1``
 
 Vamos começar a nossa primeira experiência com testes, é muito importante darmos uma atenção aos testes que já estão presentes nas primeiras etapas do desenvolvimento de códigos, antes da aplicação ser executada. Chamamos de testes estáticos.
 
@@ -117,18 +117,18 @@ Iremos aprender a fazer uma simulação simples de teste e criaremos um cenário
 
 Dentro da pasta ``testes-unitarios``, você encontrará o arquivo ``teste-framework.js``
 
-No arquivo existe a função ``somaCompra``, essa função recebe dois parâmetros “livroSelecionado” e “carrinho”, o objetivo dela é somar os livros selecionados na plataforma da livraria e somar com os que já estiverem no carrinho de compra. 
+No arquivo existe a função ``somaCompra``, essa função recebe dois parâmetros “livroSelecionado” e “carrinho”, o objetivo dela é somar o valor dos livros selecionados na plataforma da livraria e somar com a taxa de entrega. 
 
 Para conferir se a função está somando corretamente, foi atribuido o bloco "if/else" para executar o teste de validação, usando a variável chamada ``esperado``que recebe o 
 resultado da soma das compras.
 
 ```js
-const somaCompras = (livroSelecionado, carrinho) => {
-  return livroSelecionado + carrinho;
+const somaCompras = (livroSelecionado, taxaEntrega) => {
+  return livroSelecionado + taxaEntrega;
 };
 
-let esperado = 15;
-let retorno = somaCompras(10, 5);
+let esperado = 55;
+let retorno = somaCompras(50, 5);
 
 if (esperado === retorno) {
   console.log(`O teste deu certo :)`);
@@ -166,8 +166,8 @@ O comportamento está sendo o esperado, porém, considerando num projeto maior, 
 Vamos também simplificar nosso código para um único if/else, e por fim, iremos atribuir os valores de entrada com a nova variável. Conseguiremos usar para o teste das funções somaCompras e estoque. 
 
 ```js
-const somaCompras = (livroSelecionado, carrinho) => {
-  return livroSelecionado + carrinho;
+const somaCompras = (livroSelecionado, taxaEntrega) => {
+  return livroSelecionado + taxaEntrega;
 };
 
 const estoque = (livroEstoque, livroSelecionado) => {
@@ -193,4 +193,91 @@ node teste-framework.js
 ```
 
 Agora conseguimos ter um retorno mais preciso, sinalizando exatamente de onde está partindo o resultado do teste.  
+
+
+### Testes unitários com Jest
+
+Chegamos numa etapa importante dos testes, nós vamos conhecer a ferramenta de teste mais conhecida da comunidade JavaScript, que é o Jest. 
+
+Ele foi inicialmente desenvolvido pelo Facebook para testar o framework React, porém ganhou tanta destaque que também é usado com TypeScript, Node, Angular, Vue entre outros.
+
+Além de ser seguro, o Jest tem uma documentação com orientações claras e objetivas.
+
+Vamos iniciar o processo seguindo alguns passos:
+
+- Instalamos o jest como devDependencies
+
+```js
+npm install --save-exact jest@28.1.0 --save-dev
+```
+
+- Vamos modificar o script "test" que já existe dentro do arquivo package-json, iremos modificar para executar o Jest. 
+
+```js
+“test”: “jest”
+``` 
+
+Agora podemos fazer nossos testes automatizados com o Jest. Vamos usar o exemplo do framework de teste que criamos anteriormente, precisaremos copiar as funções "somaCompras" e "estoque".
+
+Dentro da pasta ``testes-unitarios`` criaremos o arquivo ``compras.js``, dentro do arquivo vamos colar apenas a função "somaCompras" e exportar com o método "module.exports".
+
+```js
+const somaCompras = (livroSelecionado, taxaEntrega) => {
+  return livroSelecionado + taxaEntrega;
+}
+
+module.exports = somaCompras;
+```
+
+Criaremos o arquivo ``estoque.js``, vamos colar apenas a função "estoque" e exportar com o método "module.exports".
+
+```js
+const estoque = (livroEstoque, livroVendido) => {
+  return livroEstoque - livroVendido;
+}
+
+module.exports = estoque;
+```
+
+Na raiz do projeto1, criaremos uma pasta chamada ``test`` e dentro dela, criaremos o arquivo chamado ``vendas.test.js``. No arquivo iremos estruturar nosso código de teste do framework. Iremos utilizar os método ``expect`` e o [matcher](https://jestjs.io/docs/using-matchers) ``toBe`` do Jest. 
+
+```js
+const somaCompras = require ("../testes-unitarios/compras.js");
+const estoque = require ("../testes-unitarios/estoque.js");
+
+
+test("Deve retornar a soma das compras com taxa de entrega", () => {
+  const esperado = 2530;
+  const retornado = somaCompras(2500, 30);
+
+  expect(retornado).toBe(esperado)
+});
+
+test("Deve retornar a diferença que restou no estoque", () => {
+  const esperado = 280;
+  const retornado = estoque(310, 30);
+
+  expect(retornado).toBe(esperado)
+});
+```
+
+Vamos executar nosso script no terminal e fazer a leitura do nosso teste:
+
+```js
+npm run test
+```
+
+É esperado que seja feito outros testes, para evitar termos que executar sempre o Jest, podemos executar o teste no modo ``watch``, uma opção incluida no Jest que permite manter a ferramenta funcionando em tempo integral. 
+
+Podemos atribuir a função ``--watchAll`` no script do jest, dentro do arquivo package.json. O script ficará da seguinte forma:
+
+```js
+"test:watch": "jest --watchAll"
+```
+
+
+
+
+
+
 

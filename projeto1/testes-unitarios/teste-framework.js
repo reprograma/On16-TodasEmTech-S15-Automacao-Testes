@@ -1,9 +1,9 @@
-const somaCompras = (livroSelecionado, carrinho) => {
-  return livroSelecionado + carrinho;
+const somaCompras = (livroSelecionado, taxaEntrega) => {
+  return livroSelecionado + taxaEntrega;
 };
 
-let esperado = 15;
-let retorno = somaCompras(10, 5);
+let esperado = 55;
+let retorno = somaCompras(50, 5);
 
 if (esperado === retorno) {
   console.log(`O teste deu certo :)`);
