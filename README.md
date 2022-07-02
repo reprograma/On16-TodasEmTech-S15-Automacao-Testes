@@ -16,10 +16,17 @@ Durante a aula, nós vamos utilizar dois projetos:
 
 ## ATIVIDADE PARA CASA
 
-A atividade para casa será reproduzir os testes na mesma API que você utilizou na atividade da aula Integração Banco de Dados.
+A atividade para casa será reproduzir os testes na mesma API que você utilizou na atividade da aula Integração Banco de Dados. Você deverá seguir o passo a passo do teste de API, que está no arquivo ``testeAPI.md`` e aplicar na API de sua escolha.
 
-Você deverá seguir o passo a passo do teste de API, que está no arquivo ``testeAPI.md".
+A atividade será avaliada nos seguintes critérios:
 
+- Criação de pasta e arquivo de test;
+
+- Estutura de código para teste das rotas da API;
+
+- Sintaxe de testes usando describe e matchers;
+
+- Uso do Jest e ESLint.
 
 ------------------------------------------------------------------------
 
