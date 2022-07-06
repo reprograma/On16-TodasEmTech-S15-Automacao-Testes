@@ -62,7 +62,7 @@ Para esta aula, configuramos o ESLint da seguinte forma:
 - √ What type of modules does your project use? · commonjs
 - √ Which framework does your project use? · none
 - √ Does your project use TypeScript? · No
-- √ Where does your code run? · browser
+- √ Where does your code run? · node
 - √ How would you like to define a style for your project? · guide
 - √ Which style guide do you want to follow? · airbnb
 - √ What format do you want your config file to be in? · JSON

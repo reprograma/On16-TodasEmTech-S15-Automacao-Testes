@@ -47,17 +47,18 @@ Vamos começar a testar nossa rota de GET/READ da nossa API. Usando os métodos 
 
 ```js
 describe("Testes do modelo Livros", () => {
-   it("Deve chamar o schema e retornar um novo livro", ()  => {
-	  const livro = new Livro({
-	  "id": 10,
-  	"titulo": "Amora",
-  	"autor":	"Emicida",
-  	"editora": "Companhia das Letrinhas",
-	  "numeroPaginas": 44
-     });
-     expect(livro.titulo).toBe("Amora");
-   })
-})
+  it("Deve chamar o schema e retornar um novo livro", () => {
+    const livro = new Livro({
+      id: 10,
+      titulo: "Amora",
+      autor: "Emicida",
+      editora: "Companhia das Letrinhas",
+      numeroPaginas: 44,
+    });
+    expect(livro.titulo).toBe("Amora");
+  });
+});
+
 ```
 
 Vamos executar nosso primeiro teste no terminal? 
@@ -73,16 +74,16 @@ Será preciso refatorar nosso código, fazendo algumas mudanças.
 ```js
 describe("Testes do modelo Livros", () => {
   const livro = new Livro({
-	  "id": 10,
-  	"titulo": "Amora",
-  	"autor":	"Emicida",
-  	"editora": "Companhia das Letrinhas",
-	  "numeroPaginas": 44
+    id: 10,
+    titulo: "Amora",
+    autor: "Emicida",
+    editora: "Companhia das Letrinhas",
+    numeroPaginas: 44,
   });
   it("Deve chamar o schema e retornar um novo livro", () => {
-    expect(livro.titulo).toBe("Amoras");
+    expect(livro.titulo).toBe("Amora");
   });
-});
+})
 ```
 Agora podemos continuar com os teste, usando a sintaxe de asserção, graças a função ``describe`` e a palavra reservada``it``.
 
@@ -91,7 +92,7 @@ Na linha seguinte, na penúltima chave e parenteses, vamos colocar um novo teste
 ```js
   it("Deve salvar no banco de dados o novo livro", () => {
     livro.save().then((dados) => {
-      expect(dados.titulo).toBe("Amoras");
+      expect(dados.titulo).toBe("Amora");
     });
   });
 ```
@@ -99,20 +100,22 @@ Na linha seguinte, na penúltima chave e parenteses, vamos colocar um novo teste
 O teste completo, deverá ficar da seguinte forma:
 
 ```js
+const Livro = require("../src/models/livros.js");
+
 describe("Testes do modelo Livros", () => {
   const livro = new Livro({
-	  "id": 10,
-  	"titulo": "Amora",
-  	"autor":	"Emicida",
-  	"editora": "Companhia das Letrinhas",
-	  "numeroPaginas": 44
+    id: 10,
+    titulo: "Amora",
+    autor: "Emicida",
+    editora: "Companhia das Letrinhas",
+    numeroPaginas: 44,
   });
   it("Deve chamar o schema e retornar um novo livro", () => {
-    expect(livro.titulo).toBe("Amoras");
+    expect(livro.titulo).toBe("Amora");
   });
   it("Deve salvar no banco de dados o novo livro", () => {
     livro.save().then((dados) => {
-      expect(dados.titulo).toBe("Amoras");
+      expect(dados.titulo).toBe("Amora");
     });
   });
 });

@@ -2,23 +2,17 @@ const somaCompras = (livroSelecionado, taxaEntrega) => {
   return livroSelecionado + taxaEntrega;
 };
 
-let esperado = 55;
-let retorno = somaCompras(50, 5);
-
-if (esperado === retorno) {
-  console.log(`O teste deu certo :)`);
-} else {
-  console.error(`O teste deu ruim :(`);
-}
-
 const estoque = (livroEstoque, livroSelecionado) => {
   return livroEstoque - livroSelecionado;
 };
 
-esperado = 5;
-retorno = estoque(10, 5);
-if (esperado === retorno) {
-  console.log(`O teste deu certo :)`);
-} else {
-  console.error(`O teste deu ruim :(`);
-}
+const teste = (titulo, esperado, retorno) => {
+  if (esperado === retorno) {
+    console.log(` ${titulo}, o teste deu certo :)`);
+  } else {
+    console.error(`${titulo}, o teste deu ruim :(`);
+  }
+};
+
+teste("somaCompras", 10, somaCompras(50, 5));
+teste("estoque", 20, estoque(50, 30));
