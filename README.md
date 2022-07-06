@@ -2,6 +2,8 @@
 
 Fala, galera! Tudo bem? Meu nome é Tereza e eu serei a instrutora da aula de Automação de Testes. 
 
+[Clique aqui](https://github.com/reprograma/On16-TodasEmTech-S15-Automacao-Testes/blob/main/material%20aula/Automa%C3%A7%C3%A3o%20de%20Testes%20-%20reprograma.pdf), para acessar o material da aula. 
+
 O nível da nossa aula é introdutório, onde aprenderemos o que é e como fazer testes desde a fase inicial de construção de uma aplicação (teste unitário), como também na fase de um projeto já pronto e estruturado (teste de API). Vamos entender os tipos e regras de testes, conceitos que envolvem qualidade, investimentos e a famosa pirâmide de testes. 
 
 Nós iremos colocar a mão no código, padronizando códigos com o ESLint e criando testes com as ferramentas Jest e Supertest.
