@@ -1,0 +1,19 @@
+{
+  "name": "para-casa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:watch": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "8.16.0",
+    "jest": "28.1.0"
+  },
+  "dependencies": {
+    "mongoose": "^6.4.3"
+  }
+}
