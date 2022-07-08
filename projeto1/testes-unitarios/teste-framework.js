@@ -1,16 +1,8 @@
-const somaCompras = (livroSelecionado, taxaEntrega) => {
-  return livroSelecionado + taxaEntrega;
-};
-
-const estoque = (livroEstoque, livroSelecionado) => {
-  return livroEstoque - livroSelecionado;
-};
-
 const teste = (titulo, esperado, retorno) => {
   if (esperado === retorno) {
-    console.log(` ${titulo}, o teste deu certo :)`);
+    console.log(`${titulo} O teste deu certo :)`);
   } else {
-    console.error(`${titulo}, o teste deu ruim :(`);
+    console.error(`${titulo} O teste deu ruim :(`);
   }
 };
 

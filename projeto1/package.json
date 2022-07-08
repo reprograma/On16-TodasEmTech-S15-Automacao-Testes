@@ -1,7 +1,6 @@
 {
   "name": "projeto1",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint --fix ./testes-estaticos",
@@ -14,6 +13,10 @@
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "jest": "28.1.0"
-  }
+    "jest": "^28.1.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
 }
