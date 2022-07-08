@@ -8,11 +8,12 @@ const estoque = (livroEstoque, livroSelecionado) => {
 
 const teste = (titulo, esperado, retorno) => {
   if (esperado === retorno) {
-    console.log(`${titulo}: O teste deu certo :)`);
+
+    console.log(` ${titulo}, o teste deu certo :)`);
   } else {
-    console.error(`${titulo}: O teste deu ruim :(`);
+    console.error(`${titulo}, o teste deu ruim :(`);
   }
 };
 
-teste("somaCompras", 55, somaCompras(50, 5))
-teste("estoque", 2, estoque(50, 20))
+teste("somaCompras", 10, somaCompras(50, 5));
+teste("estoque", 20, estoque(50, 30));
