@@ -1,6 +1,7 @@
+const DATABASE_URI = process.env.DATABASE_URI
 const mongoose = require ("mongoose");
 
-mongoose.connect("mongodb+srv://caroliinaasilva_:Carolzinha1.@cluster0.sprzi.mongodb.net/reprograma-games");
+mongoose.connect(DATABASE_URI);
 
 let db = mongoose.connection;
 

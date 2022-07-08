@@ -6,7 +6,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
     "test:watch": "jest --watchAll"
-
   },
   "keywords": [],
   "author": "",
@@ -14,6 +13,7 @@
   "dependencies": {
     "express": "^4.18.1",
     "mongoose": "^6.3.8",
+    "moongose": "^1.0.0",
     "nodemon": "^2.0.16"
   },
   "description": ""
