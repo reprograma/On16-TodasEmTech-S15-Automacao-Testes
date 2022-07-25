@@ -1,7 +1,9 @@
-const mongoose = require("mongoose");
 
-mongoose.connect('mongodb+srv://letbatista2:hRpDSF65871@cluster0.qyzo3.mongodb.net/aula15testes');
+require("dotenv").config()
+const mongoose = require('mongoose');
 
-let db = mongoose.connection;
+mongoose.connect(process.env.DBATLAS);
+
+const db = mongoose.connection;
 
 module.exports = db;
