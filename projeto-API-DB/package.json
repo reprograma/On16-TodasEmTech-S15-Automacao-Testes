@@ -1,5 +1,5 @@
 {
-  "name": "projeto1",
+  "name": "projeto-api-db",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,15 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "lint": "npx eslint --fix ./testes-estaticos",
-    "test": "jest"
+    "lint": "npx eslint --fix ./test",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.20.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "jest": "28.1.0"
+    "eslint-plugin-import": "^2.26.0"
   }
 }
